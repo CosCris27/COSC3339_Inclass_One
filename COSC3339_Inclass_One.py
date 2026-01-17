@@ -30,7 +30,7 @@ def calculate_shipping_cost(weight, destination):
     cost = None
     
     if weight < 0:   # change #1 ( check ) 
-        Print("Weight cant be negative!")
+        print("Weight cant be negative!")
         return None
     
     if destination == "US":
