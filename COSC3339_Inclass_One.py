@@ -15,76 +15,76 @@ import math
 import random
 
 # This method contains a bug. In your commit note, state the bug and how you fixed it
-def calculate_hypotenuse(side_a, side_b):
-    result = math.sqrt(side_a**2 + side_b**2) 
+def calculate_hypotenuse(SIDE_A, SIDE_B):
+    result = math.sqrt(SIDE_A**2 + SIDE_B**2) 
     return result
 
 # This method contains a bug. In your commit note, state the bug and how you fixed it
-def count_words(sentence):
-    if len(sentence) == 0:
+def count_words(SENTENCE):
+    if len(SENTENCE) == 0:
         return 0
-    words = sentence.split()  
+    words = SENTENCE.split()  
     return len(words)
 
 
 # This method is long to allow for non-overlapping edits.
-def calculate_shipping_cost(weight, destination):
+def calculate_shipping_cost(WEIGHT, DESTINATION):
     cost = None
     
-    if weight < 0:   # change #1 ( check ) 
-        print("Weight cant be negative!")
+    if WEIGHT < 0:   # change #1 ( check ) 
+        print("WEIGHT cant be negative!")
         return None
     
-    if destination == "US":
+    if DESTINATION == "US":
         base_cost = 5.0
-        if weight < 10: # change 2 ( if weight is less than 10) 
+        if WEIGHT < 10: # change 2 ( if WEIGHT is less than 10) 
             cost = base_cost
         else:
             # Over 10 lbs, add $1 per extra lb
-            extra_weight = weight - 10
-            cost = base_cost + (extra_weight * 1.0)
+            extra_WEIGHT = WEIGHT - 10
+            cost = base_cost + (extra_WEIGHT * 1.0)
             
-    elif destination == "International":
+    elif DESTINATION == "International":
         base_cost = 14.0 # change 2
-        if weight <= 5:
+        if WEIGHT <= 5:
             cost = base_cost
         else:
             # Over 5 lbs, add $5 per extra lb
-            extra_weight = weight - 5
-            cost = base_cost + (extra_weight * 5.0)
+            extra_WEIGHT = WEIGHT - 5
+            cost = base_cost + (extra_WEIGHT * 5.0)
             
     else:
-        # Unknown destination
-        print(f"Error: Unknown destination {destination}")
+        # Unknown DESTINATION
+        print(f"Error: Unknown DESTINATION {DESTINATION}")
         return 0.0 # change 1
 
     return round(cost, 2) # change return
 
 
 # This method uses funky logic. Rewrite it using different loop structures
-def curve_scores(scores):
+def curve_SCORES(SCORES):
     curved = []
-    for score in scores:
+    for score in SCORES:
         new_score = min(score * 1.05, 100)
         curved.append(new_score)
     return curved
 
 # For scenario three change the name of this method.
 # For scenario five fix the typos
-def _validate_input(text_value):
+def _validate_input(TEXT_VALUE):
 
     valud_imput = True 
     
-    if text_value is None:
+    if TEXT_VALUE is None:
         valud_imput = False
     
-    if text_value == "":
+    if TEXT_VALUE == "":
         valud_imput = False
         
     return valud_imput
 
-def process_user_data (user_text):
-    return _validate_input(user_text)
+def process_user_data (USER_TEXT):
+    return _validate_input(USER_TEXT)
 
 
 
@@ -110,9 +110,9 @@ def main():
     print("-" * 20)
 
     # TEST D: Curve
-    original_scores = [80, 98, 40, 12, 110, 75]
-    print(f"Test D (Original): {original_scores}")
-    print(f"Test D (Curved):   {curve_scores(original_scores)}")
+    original_SCORES = [80, 98, 40, 12, 110, 75]
+    print(f"Test D (Original): {original_SCORES}")
+    print(f"Test D (Curved):   {curve_SCORES(original_SCORES)}")
 
     print("-" * 20)
 
